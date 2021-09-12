@@ -30,7 +30,7 @@ const showProducts = ( products ) => {
   }
 };
 let count = 0;
-const addToCart = ( price ) => {
+const addToCart = ( id, price ) => {
   count = count + 1;
   updatePrice( "price", price );
   updateTaxAndCharge();
