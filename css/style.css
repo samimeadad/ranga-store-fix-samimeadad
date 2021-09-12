@@ -25,7 +25,7 @@ body {
   border-radius: 25px;
   margin-left: 20px;
 }
-#all-products {
+/* #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   /* border: 1px solid black; */
@@ -34,7 +34,7 @@ body {
   margin: auto;
   align-items: center;
   justify-content: center;
-}
+} */
 .single-product {
   padding: 10px;
   transition: 0.6s;
@@ -46,7 +46,7 @@ body {
 }
 .product-image {
   width: 150px;
-  height: 150px;
+  height: 180px;
 }
 .cart {
   width: 350px;
