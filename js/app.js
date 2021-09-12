@@ -1,12 +1,9 @@
 const loadProducts = () => {
-  // const url = `https://fakestoreapi.com/products`;
-  const url = `http://127.0.0.1:5500/db.json`;
+  const url = `https://raw.githubusercontent.com/ProgrammingHero1/ranga-store-api/main/ranga-api.json`;
   fetch( url )
     .then( response => response.json() )
     .then( ( data ) => showProducts( data ) );
 };
-
-loadProducts();
 
 // show all product in UI
 const showProducts = ( products ) => {
@@ -82,3 +79,4 @@ const updateTotal = () => {
     getInputValue( "total-tax" );
   document.getElementById( "total" ).innerText = grandTotal.toFixed( 2 );
 };
+loadProducts();
