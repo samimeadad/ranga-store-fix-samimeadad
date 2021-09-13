@@ -47,7 +47,7 @@ const addToCart = ( price ) => {
   document.getElementById( "total-Products" ).innerText = count;
 };
 
-//get the different field of the product through its id
+//get the different field value of the cart through field id
 const getInputValue = ( id ) => {
   const element = document.getElementById( id ).innerText;
   const converted = parseFloat( element );
@@ -70,17 +70,17 @@ const setInnerText = ( id, value ) => {
 // update delivery charge and total Tax
 const updateTaxAndCharge = () => {
   const priceConverted = getInputValue( "price" );
-  if ( priceConverted > 200 ) {
-    setInnerText( "delivery-charge", 30 );
-    setInnerText( "total-tax", priceConverted * 0.2 );
+  if ( priceConverted > 500 ) {
+    setInnerText( "delivery-charge", 60 );
+    setInnerText( "total-tax", priceConverted * 0.4 );
   }
   else if ( priceConverted > 400 ) {
     setInnerText( "delivery-charge", 50 );
     setInnerText( "total-tax", priceConverted * 0.3 );
   }
-  else if ( priceConverted > 500 ) {
-    setInnerText( "delivery-charge", 60 );
-    setInnerText( "total-tax", priceConverted * 0.4 );
+  else if ( priceConverted > 200 ) {
+    setInnerText( "delivery-charge", 30 );
+    setInnerText( "total-tax", priceConverted * 0.2 );
   }
 };
 
