@@ -18,14 +18,14 @@ const showProducts = ( products ) => {
     const div = document.createElement( "div" );
     div.classList.add( "product" );
     div.innerHTML = `
-      <div class="single-product p-2 h-100 bg-light rounded">
+      <div class="single-product p-2 h-100 rounded">
         <div>
           <img class="product-image" src=${ product.image }></img>
         </div>
         <div>
           <h4>${ product.title }</h4>
           <p><b>Category:</b> ${ product.category }</p>
-          <span class="text-danger"><b>Rating:</b> ${ product.rating.rate }</span><br>
+          <span class="text-danger"><b>Avg. Rating:</b> ${ product.rating.rate }</span><br>
           <span class="text-danger"><b>Rate Count:</b> ${ product.rating.count }</span>
           <h2 class="text-primary fw-bold">Price: $ ${ product.price }</h2>
           <button onclick="addToCart(${ product.price })" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
@@ -37,14 +37,15 @@ const showProducts = ( products ) => {
   }
 };
 
-//function definition of addToCart, when add to cart button is clicked
+//function definition of addToCart, when add to cart button is clicked the function is called.
 let count = 0;
 const addToCart = ( price ) => {
   count = count + 1;
+  document.getElementById( "total-Products" ).innerText = count;
   updatePrice( "price", price );
   updateTaxAndCharge();
   updateTotal();
-  document.getElementById( "total-Products" ).innerText = count;
+
 };
 
 //get the different field value of the cart through field id
@@ -57,8 +58,8 @@ const getCartFieldValue = ( id ) => {
 // main price update function
 const updatePrice = ( id, value ) => {
   const convertedOldPrice = getCartFieldValue( id );
-  const convertPrice = parseFloat( value );
-  const total = convertedOldPrice + convertPrice;
+  const convertNewPrice = parseFloat( value );
+  const total = convertedOldPrice + convertNewPrice;
   document.getElementById( id ).innerText = total.toFixed( 2 );
 };
 
@@ -86,6 +87,10 @@ const updateTaxAndCharge = () => {
   else if ( priceConverted > 200 && priceConverted < 400 ) {
     setInnerText( "delivery-charge", 30 );
     setInnerText( "total-tax", priceConverted * 0.2 );
+  }
+  else {
+    setInnerText( "delivery-charge", 20 );
+    setInnerText( "total-tax", priceConverted * 0 );
   }
 };
 

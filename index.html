@@ -25,10 +25,10 @@
       </h1>
 
       <!-- Search Area -->
-      <div class="input-group mt-5 w-50 mx-auto">
-        <input id="search-field" type="text" class="form-control" placeholder="Enter Product Name to Search"
-          aria-label="search-field" aria-describedby="button-addon2">
-        <button onclick="loadProducts()" id="search-button" class="ms-2 btn btn-primary rounded-3"
+      <div class="input-group mt-5 w-50 search-box">
+        <input id="search-field" type="text" class="form-control search-field"
+          placeholder="Enter Product Name to Search" aria-label="search-field" aria-describedby="button-addon2">
+        <button onclick="loadProducts()" class="ms-2 btn btn-primary text-white rounded-3 search-button"
           type="button">Search</button>
       </div>
     </header>
@@ -42,7 +42,7 @@
         </div>
         <!-- Product Cart -->
         <div class="col-md-3 col-lg-3 col-sm-5 cart-main mt-4">
-          <div class="cart bg-white ms-5 rounded rounded-3" id="my-cart">
+          <div class="cart ms-5 rounded rounded-3" id="my-cart">
             <table class="table">
               <thead>
                 <h1 class="text-center text-danger fw-bold">My-Cart</h1>
@@ -55,7 +55,7 @@
               </thead>
               <tbody>
                 <tr>
-                  <th>Total Added-Products:</th>
+                  <th>Total-Added-Products:</th>
                   <td><span id="total-Products">0</span></td>
                   <td></td>
                   <td></td>
