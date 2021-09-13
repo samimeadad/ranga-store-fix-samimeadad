@@ -90,6 +90,7 @@ const updateTaxAndCharge = () => {
     setInnerText( "delivery-charge", 30 );
     setInnerText( "total-tax", priceConverted * 0.2 );
   }
+  //Condition for anything else
   else {
     setInnerText( "delivery-charge", 20 );
     setInnerText( "total-tax", priceConverted * 0 );
