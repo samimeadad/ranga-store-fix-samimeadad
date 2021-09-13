@@ -1,15 +1,20 @@
 const loadProducts = () => {
-  const url = `https://raw.githubusercontent.com/ProgrammingHero1/ranga-store-api/main/ranga-api.json`;
+  // Programming-Hero provided API URL
+  // const url = `https://raw.githubusercontent.com/ProgrammingHero1/ranga-store-api/main/ranga-api.json`;
+
+  // Original API URL provided in the assignment
+  const url = `https://fakestoreapi.com/products`;
+
+  //Fetch the data from the server through API call
   fetch( url )
     .then( response => response.json() )
-    .then( ( data ) => showProducts( data ) );
+    .then( data => showProducts( data ) );
 };
 
 // show all product in UI
 const showProducts = ( products ) => {
   const allProducts = products.map( ( pd ) => pd );
   for ( const product of allProducts ) {
-    const image = product.images;
     const div = document.createElement( "div" );
     div.classList.add( "product" );
     div.innerHTML = `
@@ -17,20 +22,24 @@ const showProducts = ( products ) => {
         <div>
           <img class="product-image" src=${ product.image }></img>
         </div>
-        <h4>${ product.title }</h4>
-        <p><b>Category:</b> ${ product.category }</p>
-        <span><b>Rating:</b> ${ product.rating.rate }</span><br>
-        <span><b>Rate Count:</b> ${ product.rating.count }</span>
-        <h2>Price: $ ${ product.price }</h2>
-        <button onclick="addToCart(${ product.id },${ product.price })" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-        <button id="details-btn" class="btn btn-danger">Details</button>
+        <div>
+          <h4>${ product.title }</h4>
+          <p><b>Category:</b> ${ product.category }</p>
+          <span class="text-danger"><b>Rating:</b> ${ product.rating.rate }</span><br>
+          <span class="text-danger"><b>Rate Count:</b> ${ product.rating.count }</span>
+          <h2 class="text-primary fw-bold">Price: $ ${ product.price }</h2>
+          <button onclick="addToCart(${ product.price })" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
+          <button id="details-btn" class="btn btn-danger">Details</button>
+        </div>
       </div>
     `;
     document.getElementById( "all-products" ).appendChild( div );
   }
 };
+
+//function call when add to cart button is clicked
 let count = 0;
-const addToCart = ( id, price ) => {
+const addToCart = ( price ) => {
   count = count + 1;
   updatePrice( "price", price );
   updateTaxAndCharge();
@@ -38,6 +47,7 @@ const addToCart = ( id, price ) => {
   document.getElementById( "total-Products" ).innerText = count;
 };
 
+//get the different field of the product through its id
 const getInputValue = ( id ) => {
   const element = document.getElementById( id ).innerText;
   const converted = parseFloat( element );
@@ -64,11 +74,11 @@ const updateTaxAndCharge = () => {
     setInnerText( "delivery-charge", 30 );
     setInnerText( "total-tax", priceConverted * 0.2 );
   }
-  if ( priceConverted > 400 ) {
+  else if ( priceConverted > 400 ) {
     setInnerText( "delivery-charge", 50 );
     setInnerText( "total-tax", priceConverted * 0.3 );
   }
-  if ( priceConverted > 500 ) {
+  else if ( priceConverted > 500 ) {
     setInnerText( "delivery-charge", 60 );
     setInnerText( "total-tax", priceConverted * 0.4 );
   }

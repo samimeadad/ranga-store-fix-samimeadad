@@ -8,7 +8,7 @@
     <title>a2z Super Store</title>
     <link rel="stylesheet" href="./css/style.css" />
 
-    <!-- CSS only -->
+    <!-- Bootstrap-5 CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
@@ -18,9 +18,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
   </head>
 
-  <body class="m-0 p-0 p-3">
+  <body class="m-0 p-0 p-3 bg-dark">
     <header class="header container mt-2 mb-5">
-      <h1 class="text-center text-primary fw-bold">a2z Super Store</h1>
+      <!-- main heading -->
+      <h1 class="text-center text-primary fw-bold">Welcome to a2z Super Store</h1>
+
+      <!-- Search Area -->
       <div class="input-group mt-5 mb-3">
         <input id="search-field" type="text" class="form-control" placeholder="Enter Product Name to Search"
           aria-label="search-field" aria-describedby="button-addon2">
@@ -29,27 +32,19 @@
       </div>
     </header>
     <main class="main">
-      <!--  <div class="search-field">
-        <div class="search-box">
-          <input id="input-field" class="search-field" type="text" />
-          <button type="button" class="btn btn-primary search-button" data-toggle="button" aria-pressed="false"
-            autocomplete="off" id="search-btn" onclick="loadProducts()">
-            Search
-          </button>
-        </div>
-      </div> -->
-
+      <!-- Product Information Card & Cart Portion -->
       <div class="row">
         <div class="col-md-9 col-lg-9 col-sm-7">
+          <!-- Product Cards created dynamically in this area -->
           <div id="all-products" class="row row-cols-1 row-cols-md-3 g-5 mt-2 text-center">
-            <h1></h1>
           </div>
         </div>
+        <!-- Product Cart -->
         <div class="col-md-3 col-lg-3 col-sm-5 cart-main">
-          <div class="cart" id="my-cart">
+          <div class="cart bg-white ms-5 rounded rounded-3" id="my-cart">
             <table class="table">
               <thead>
-                <h1>My-Cart</h1>
+                <h1 class="text-center text-danger fw-bold">My-Cart</h1>
                 <tr>
                   <th scope="col"></th>
                   <th scope="col"></th>
@@ -90,7 +85,7 @@
               </tbody>
             </table>
             <div class="parces text-center">
-              <button class="btn btn-primary text-center">Buy Now</button>
+              <button class="btn btn-danger text-center text-white fw-bold">Buy Now</button>
             </div>
           </div>
         </div>
