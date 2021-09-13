@@ -1,5 +1,5 @@
 const loadProducts = () => {
-  // Original API URL provided in the assignment. Sometimes it's getting problem fetching data from this API. So, I have used the above URL provided by Programming-Hero. Thanks.
+  // Original API URL provided in the assignment. Sometimes it's getting problem fetching data from this API. So, I have used the below URL provided by Programming-Hero. Thanks.
   // const url = `https://fakestoreapi.com/products`;
 
   // Programming-Hero provided API URL
