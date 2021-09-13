@@ -1,9 +1,9 @@
 const loadProducts = () => {
-  // Programming-Hero provided API URL
-  const url = `https://raw.githubusercontent.com/ProgrammingHero1/ranga-store-api/main/ranga-api.json`;
-
   // Original API URL provided in the assignment. Sometimes it's getting problem fetching data from this API. So, I have used the above URL provided by Programming-Hero. Thanks.
   // const url = `https://fakestoreapi.com/products`;
+
+  // Programming-Hero provided API URL
+  const url = `https://raw.githubusercontent.com/ProgrammingHero1/ranga-store-api/main/ranga-api.json`;
 
   //Fetch the data from the server through API call
   fetch( url )
