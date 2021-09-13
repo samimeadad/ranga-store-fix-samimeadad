@@ -48,15 +48,15 @@ const addToCart = ( price ) => {
 };
 
 //get the different field value of the cart through field id
-const getFieldValue = ( id ) => {
-  const element = document.getElementById( id ).innerText;
-  const converted = parseFloat( element );
-  return converted;
+const getCartFieldValue = ( id ) => {
+  const fieldText = document.getElementById( id ).innerText;
+  const fieldValue = parseFloat( fieldText );
+  return fieldValue;
 };
 
 // main price update function
 const updatePrice = ( id, value ) => {
-  const convertedOldPrice = getFieldValue( id );
+  const convertedOldPrice = getCartFieldValue( id );
   const convertPrice = parseFloat( value );
   const total = convertedOldPrice + convertPrice;
   document.getElementById( id ).innerText = total.toFixed( 2 );
@@ -69,17 +69,21 @@ const setInnerText = ( id, value ) => {
 
 // update delivery charge and total Tax
 const updateTaxAndCharge = () => {
-  const priceConverted = getFieldValue( "price" );
+  const priceConverted = getCartFieldValue( "price" );
   //Condition for delivery charge and tax calculation. There was a small bug and due to that delivery charge and tax calculation was wrong. Now the bug has been fixed. Tax calculation is now OK.
+
+  //Condition for the product price above 500 USD
   if ( priceConverted > 500 ) {
     setInnerText( "delivery-charge", 60 );
     setInnerText( "total-tax", priceConverted * 0.4 );
   }
-  else if ( priceConverted > 400 ) {
+  //Condition for the product price above 400 USD
+  else if ( priceConverted > 400 && priceConverted < 500 ) {
     setInnerText( "delivery-charge", 50 );
     setInnerText( "total-tax", priceConverted * 0.3 );
   }
-  else if ( priceConverted > 200 ) {
+  //Condition for the product price above 200 USD
+  else if ( priceConverted > 200 && priceConverted < 400 ) {
     setInnerText( "delivery-charge", 30 );
     setInnerText( "total-tax", priceConverted * 0.2 );
   }
@@ -88,8 +92,9 @@ const updateTaxAndCharge = () => {
 //grandTotal update function
 const updateTotal = () => {
   const grandTotal =
-    getFieldValue( "price" ) + getFieldValue( "delivery-charge" ) +
-    getFieldValue( "total-tax" );
+    getCartFieldValue( "price" ) +
+    getCartFieldValue( "delivery-charge" ) +
+    getCartFieldValue( "total-tax" );
   document.getElementById( "total" ).innerText = grandTotal.toFixed( 2 );
 };
 

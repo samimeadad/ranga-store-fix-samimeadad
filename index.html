@@ -25,7 +25,7 @@
       </h1>
 
       <!-- Search Area -->
-      <div class="input-group mt-5">
+      <div class="input-group mt-5 w-50 mx-auto">
         <input id="search-field" type="text" class="form-control" placeholder="Enter Product Name to Search"
           aria-label="search-field" aria-describedby="button-addon2">
         <button onclick="loadProducts()" id="search-button" class="ms-2 btn btn-primary rounded-3"
@@ -37,11 +37,11 @@
       <div class="row">
         <div class="col-md-9 col-lg-9 col-sm-7">
           <!-- Product Cards created dynamically in this area -->
-          <div id="all-products" class="row row-cols-1 row-cols-md-3 g-4 mt-2 text-center">
+          <div id="all-products" class="row row-cols-1 row-cols-md-3 g-4 mt-1 text-center">
           </div>
         </div>
         <!-- Product Cart -->
-        <div class="col-md-3 col-lg-3 col-sm-5 cart-main">
+        <div class="col-md-3 col-lg-3 col-sm-5 cart-main mt-4">
           <div class="cart bg-white ms-5 rounded rounded-3" id="my-cart">
             <table class="table">
               <thead>
@@ -62,25 +62,25 @@
                 </tr>
                 <tr>
                   <th>Price:</th>
-                  <td>$ <span id="price">0</span></td>
+                  <td>$<span id="price">0</span></td>
                   <td></td>
                   <td></td>
                 </tr>
                 <tr>
                   <th>Delivery-Charge:</th>
-                  <td>$ <span id="delivery-charge">20</span></td>
+                  <td>$<span id="delivery-charge">20</span></td>
                   <td></td>
                   <td></td>
                 </tr>
                 <tr>
                   <th>Total-Tax:</th>
-                  <td>$ <span id="total-tax">0</span></td>
+                  <td>$<span id="total-tax">0</span></td>
                   <td></td>
                   <td></td>
                 </tr>
                 <tr>
                   <th scope="row">Total</th>
-                  <td colspan="2">$ <span id="total">0</span></td>
+                  <td colspan="2">$<span id="total">0</span></td>
                   <td></td>
                 </tr>
               </tbody>
