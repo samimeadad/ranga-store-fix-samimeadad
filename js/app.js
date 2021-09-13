@@ -20,7 +20,7 @@ const showProducts = ( products ) => {
     div.innerHTML = `
       <div class="card single-product p-3 h-100 rounded">
         <div>
-          <img class="card-img-top w-50 p-1 rounded-3 mx-auto" src=${ product.image }></img>
+          <img class="product-image p-1 rounded-3 mx-auto" src=${ product.image }></img>
         </div>
         <div class="mt-2 card-body">
           <h4>${ product.title }</h4>
