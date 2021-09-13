@@ -30,8 +30,8 @@ const showProducts = ( products ) => {
           <h2 class="text-primary fw-bold">Price: $ ${ product.price }</h2>
         </div>
         <div>
-          <button onclick="addToCart(${ product.price })" id="addToCart-btn" class="buy-now btn btn-danger w-50">add to cart</button>
-          <button id="details-btn" class="btn btn-success w-25">Details</button>
+          <button onclick="addToCart(${ product.price })" id="addToCart-btn" class="buy-now btn btn-success w-50">add to cart</button>
+          <button id="details-btn" class="btn btn-danger w-25">Details</button>
         </div>
       </div>
     `;
