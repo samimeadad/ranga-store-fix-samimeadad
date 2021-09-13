@@ -43,13 +43,12 @@ body {
 
 /* style for single product card */
 .single-product {
-  background-color:aliceblue;
-  padding: 10px;
+  background-color:aliceblue !important;
   transition: 0.6s;
 }
 /* style for single product card hover event */
 .single-product:hover {
-  background-color:floralwhite;
+  background-color:floralwhite !important;
   box-shadow: 4px 4px 8px 8px lightpink;
   border-radius: 10px;
   border: 1px solid red;
