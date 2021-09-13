@@ -60,8 +60,8 @@ const getCartFieldValue = ( id ) => {
 // main price update function
 const updatePrice = ( id, value ) => {
   const convertedOldPrice = getCartFieldValue( id );
-  const convertNewPrice = parseFloat( value );
-  const total = convertedOldPrice + convertNewPrice;
+  const convertedNewPrice = parseFloat( value );
+  const total = convertedOldPrice + convertedNewPrice;
   document.getElementById( id ).innerText = total.toFixed( 2 );
 };
 
