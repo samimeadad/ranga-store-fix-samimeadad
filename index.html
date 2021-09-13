@@ -21,10 +21,11 @@
   <body class="m-0 p-0 p-3 bg-dark">
     <header class="header container mt-2 mb-5">
       <!-- main heading -->
-      <h1 class="text-center text-primary fw-bold">Welcome to a2z Super Store</h1>
+      <h1 class="text-center text-primary fw-bold">Welcome to <span class="text-warning">a2z</span> Super Store
+      </h1>
 
       <!-- Search Area -->
-      <div class="input-group mt-5 mb-3">
+      <div class="input-group mt-5">
         <input id="search-field" type="text" class="form-control" placeholder="Enter Product Name to Search"
           aria-label="search-field" aria-describedby="button-addon2">
         <button onclick="loadProducts()" id="search-button" class="ms-2 btn btn-primary rounded-3"
@@ -36,7 +37,7 @@
       <div class="row">
         <div class="col-md-9 col-lg-9 col-sm-7">
           <!-- Product Cards created dynamically in this area -->
-          <div id="all-products" class="row row-cols-1 row-cols-md-3 g-5 mt-2 text-center">
+          <div id="all-products" class="row row-cols-1 row-cols-md-3 g-4 mt-2 text-center">
           </div>
         </div>
         <!-- Product Cart -->

@@ -1,9 +1,9 @@
 const loadProducts = () => {
   // Programming-Hero provided API URL
-  // const url = `https://raw.githubusercontent.com/ProgrammingHero1/ranga-store-api/main/ranga-api.json`;
+  const url = `https://raw.githubusercontent.com/ProgrammingHero1/ranga-store-api/main/ranga-api.json`;
 
-  // Original API URL provided in the assignment
-  const url = `https://fakestoreapi.com/products`;
+  // Original API URL provided in the assignment. Sometimes it's getting problem fetching data from this API. So, I have used the above URL provided by Programming-Hero. Thanks.
+  // const url = `https://fakestoreapi.com/products`;
 
   //Fetch the data from the server through API call
   fetch( url )
@@ -18,7 +18,7 @@ const showProducts = ( products ) => {
     const div = document.createElement( "div" );
     div.classList.add( "product" );
     div.innerHTML = `
-      <div class="single-product p-3 h-100 bg-light rounded">
+      <div class="single-product p-2 h-100 bg-light rounded">
         <div>
           <img class="product-image" src=${ product.image }></img>
         </div>
@@ -37,7 +37,7 @@ const showProducts = ( products ) => {
   }
 };
 
-//function call when add to cart button is clicked
+//function definition of addToCart, when add to cart button is clicked
 let count = 0;
 const addToCart = ( price ) => {
   count = count + 1;
@@ -48,7 +48,7 @@ const addToCart = ( price ) => {
 };
 
 //get the different field value of the cart through field id
-const getInputValue = ( id ) => {
+const getFieldValue = ( id ) => {
   const element = document.getElementById( id ).innerText;
   const converted = parseFloat( element );
   return converted;
@@ -56,7 +56,7 @@ const getInputValue = ( id ) => {
 
 // main price update function
 const updatePrice = ( id, value ) => {
-  const convertedOldPrice = getInputValue( id );
+  const convertedOldPrice = getFieldValue( id );
   const convertPrice = parseFloat( value );
   const total = convertedOldPrice + convertPrice;
   document.getElementById( id ).innerText = total.toFixed( 2 );
@@ -69,7 +69,8 @@ const setInnerText = ( id, value ) => {
 
 // update delivery charge and total Tax
 const updateTaxAndCharge = () => {
-  const priceConverted = getInputValue( "price" );
+  const priceConverted = getFieldValue( "price" );
+  //Condition for delivery charge and tax calculation. There was a small bug and due to that delivery charge and tax calculation was wrong. Now the bug has been fixed. Tax calculation is now OK.
   if ( priceConverted > 500 ) {
     setInnerText( "delivery-charge", 60 );
     setInnerText( "total-tax", priceConverted * 0.4 );
@@ -87,8 +88,8 @@ const updateTaxAndCharge = () => {
 //grandTotal update function
 const updateTotal = () => {
   const grandTotal =
-    getInputValue( "price" ) + getInputValue( "delivery-charge" ) +
-    getInputValue( "total-tax" );
+    getFieldValue( "price" ) + getFieldValue( "delivery-charge" ) +
+    getFieldValue( "total-tax" );
   document.getElementById( "total" ).innerText = grandTotal.toFixed( 2 );
 };
 
